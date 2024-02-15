@@ -11,3 +11,7 @@ One student asked me a good question in the class room about express() and expre
 <li>
 express.Router() is used to create a router object, which represents a subset of the application's routes and middleware, useful for modularizing and organizing the code.</li>
 </ul>
+
+## MySQL
+
+Install the MySQL module with the command <b>npm install mysql2</b>
