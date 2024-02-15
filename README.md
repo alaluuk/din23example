@@ -15,3 +15,9 @@ express.Router() is used to create a router object, which represents a subset of
 ## MySQL
 
 Install the MySQL module with the command <b>npm install mysql2</b>
+
+Execute code 
+<pre>
+CREATE USER 'netuser'@'localhost' IDENTIFIED BY 'netpass';
+GRANT ALL ON library.* TO 'netuser'@'localhost';
+</pre>
