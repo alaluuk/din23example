@@ -1,18 +1,18 @@
+const db=require('../database.js');
+
 const book={
-    bookArray:[
-        {id_book:1, name:'Databases',author:'Jim Smith',isbn:'12334'},
-        {id_book:2, name:'JAvaScript',author:'Lisa Smith',isbn:'12334'}
-    ],
 
     getAllBooks(callback){
-        callback(this.bookArray);
+        return db.query('SELECT * FROM book',callback);
     },
     getOneBook(id,callback){
-        callback(this.bookArray[id]);
+        return db.query('SELECT * FROM book WHERE id_book=?',[id],callback);
     },
     addBook(newData, callback){
-        const sql='INSERT INTO book (name,author,isbn) VALUES('+newData.name+', '+newData.author+')';
-        callback(sql);
+        return db.query('INSERT INTO book (name,author,isbn) VALUES(?,?,?)',[newData.name, newData.author, newData.isbn],callback);
+    },
+    updateBook(updateData,id, callback){
+        return db.query('UPDATE book SET name=?, author=?, isbn=? WHERE id_book=?',[updateData.name, updateData.author, updateData.isbn, id],callback);
     }
 }
 
